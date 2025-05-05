@@ -1,45 +1,20 @@
-<?xml version='1.1' encoding='UTF-8'?>
-<project>
-  <actions/>
-  <description>This is my first Job!</description>
-  <keepDependencies>false</keepDependencies>
-  <properties>
-    <jenkins.model.BuildDiscarderProperty>
-      <strategy class="hudson.tasks.LogRotator">
-        <daysToKeep>-1</daysToKeep>
-        <numToKeep>5</numToKeep>
-        <artifactDaysToKeep>-1</artifactDaysToKeep>
-        <artifactNumToKeep>-1</artifactNumToKeep>
-        <removeLastBuild>false</removeLastBuild>
-      </strategy>
-    </jenkins.model.BuildDiscarderProperty>
-  </properties>
-  <scm class="hudson.scm.NullSCM"/>
-  <assignedNode>ubuntu_ansible</assignedNode>
-  <canRoam>false</canRoam>
-  <disabled>false</disabled>
-  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
-  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers/>
-  <concurrentBuild>false</concurrentBuild>
-  <builders>
-    <hudson.tasks.Shell>
-      <command>echo &quot;Hello world&quot;
-echo &quot;Thii is build number $BUILD_NUMBER&quot;
-sleep 7
-pwd
-sleep 7
-whoami
-echo &quot;This is jenkins home $JENKINS_HOME&quot;
-sleep 7
-echo &quot;This is $BUILD_TAG&quot;
-sleep 7
-#ls /var/lib/jenkins/plugins
-ip a
-sleep 7
-hostnamectl</command>
-      <configuredLocalRules/>
-    </hudson.tasks.Shell>
-  </builders>
-  <publishers/>
-  <buildWrappers/>
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                // 
+            }
+        }
+        stage('Test') { 
+            steps {
+                // 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                // 
+            }
+        }
+    }
+}
